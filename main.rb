@@ -43,4 +43,21 @@ get '/tweets' do
 end
 
 
+get '/news' do
+    require 'google-search'
+    query = "Mercer football"
+    #@results = "test"
+    @results = Array.new
+    Google::Search::News.new do |search|
+        search.query = query
+        search.size = :large
+    end.each { |item| @results.push item }
+    
+    @title = "News about ___"
+    @description = "These are news stories about ___"
+    @news = "active"
+    erb :news
+end
+
+
 
