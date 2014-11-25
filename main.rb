@@ -31,7 +31,7 @@ get '/tweets' do
         config.access_token_secret = "xIhyFVEZXqQqxEkOZSiWvY9undTULRLeNQRA0Z9e5q8wt"
     end
     
-        @search_results = client.search("@mercerfootball", result_type: "recent").take(30).collect do |tweet|
+        @search_results = client.search("@mags_johnson", result_type: "mixed").take(30).collect do |tweet|
       #"#{tweet.user.screen_name}: #{tweet.text}"
             tweet
         end
